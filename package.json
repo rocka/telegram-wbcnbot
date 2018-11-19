@@ -1,0 +1,22 @@
+{
+  "name": "telegram-wbcnbot",
+  "version": "0.1.0",
+  "description": "Sina Weibo link preview for telegram",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "telegram-bot",
+    "weibo"
+  ],
+  "author": "rocka <i@rocka.me>",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "koa": "^2.6.2",
+    "koa-router": "^7.4.0",
+    "node-fetch": "^2.3.0",
+    "pug": "^2.0.3"
+  }
+}

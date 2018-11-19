@@ -1,0 +1,5 @@
+extends layout.pug
+
+block addition
+    each url in cover
+        meta(property="og:image" content=url)

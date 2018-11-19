@@ -1,0 +1,8 @@
+extends layout.pug
+
+block addition
+    each url in video
+        meta(property="og:video" content=url)
+        meta(property="og:video:type" content="video/mp4")
+    each url in thumbnail
+        meta(property="og:image" content=url)

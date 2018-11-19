@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <link rel="dns-prefetch" href="//h5.sinaimg.cn">
+    <link rel="icon" sizes="any" mask href="//h5.sinaimg.cn/upload/2015/05/15/28/WeiboLogoCh.svg" color="black">
+    <link rel="apple-touch-icon" href="https://h5.sinaimg.cn/upload/1005/453/2018/06/15/QQ20180615-0.jpg">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>微博正文 - 微博HTML5版</title>
+    <meta content="随时随地发现新鲜事！微博带你欣赏世界上每一个精彩瞬间，了解每一个幕后故事。分享你想表达的，让全世界都能听到你的心声！" name="description">
+    <meta name="theme-color" content="#F3F3F3">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+        <link rel="stylesheet" href="//h5.sinaimg.cn/marvel/v1.4.0/css/lib/base.css">
+    <link rel="stylesheet" href="//h5.sinaimg.cn/marvel/v1.4.0/css/card/cards.css">
+    <script>!function(e){var a,i=navigator.userAgent.toLowerCase(),n=document.documentElement,t=parseInt(n.clientWidth);if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)||i.indexOf("like mac os x")>0){var s=/os [\d._]*/gi,o=i.match(s);a=(o+"").replace(/[^0-9|_.]/gi,"").replace(/_/gi,".")}var r=a+"";"undefined"!=r&&r.length>0&&(a=parseInt(r),a>=8&&(375==t||667==t||320==t||568==t||480==t)?n.className="iosx2":(a>=8&&414==t||736==t)&&(n.className="iosx3")),/(Android)/i.test(navigator.userAgent)&&(n.className="android")}(window);</script>
+        <style>html, body, #app {height: 100%;}[v-cloak] {display: none;}.wb-item-wrap .card9.card{margin:0}.f-weibo .m-img-box{background-color:#e6e6e6}.empty-bg{width:100%;background-color:#e6e6e6;height:.375rem}.inline-block{display:inline-block}.txt-margin{margin:0 0 1rem 0}.width-min{width:4.375rem}.anim-load{animation:load .5s ease-out;-moz-animation:load .5s ease-out;-webkit-animation:load .5s ease-out;-o-animation:load .5s ease-out}@keyframes load{0%{background-color:#fff}100%{background-color:#e6e6e6}}@-moz-keyframes load{0%{background-color:#fff}100%{background-color:#e6e6e6}}@-webkit-keyframes load{0%{background-color:#fff}100%{background-color:#e6e6e6}}.f-more{letter-spacing:.1rem}.f-weibo .f-card-title{margin:-1rem -1rem .5rem -1rem;padding:0 1rem;border-width:0}.f-weibo .m-avatar-box .m-img-box .m-icon{font-size:14px}.iosx3 .card9 .f-card-title{border-width:0}.iosx2 .card9 .f-card-title{border-width:0}.f-weibo.card9{border-bottom:1px solid #e6e6e6}.iosx3 .f-weibo.card9{border-bottom:.36px solid #e6e6e6}.iosx2 .f-weibo.card9{border-bottom:.5px solid #e6e6e6}.f-weibo.card9>.card-wrap{margin-left:.75rem;margin-right:.75rem}.f-weibo.card9.m-panel{border-top-width:0}.f-weibo.card .card-wrap .f-col-wrap{padding:0 .9375rem}.f-weibo.card9 .m-box-col{min-width:0}.f-weibo.card9 .weibo-top{padding:0 0 0 .25rem}.f-weibo.card9 .weibo-top .m-box-col .m-icon{margin-left:3px}.f-weibo.card9 .weibo-main .weibo-og{padding:.75rem 0 0 .25rem}.f-weibo.card9 .weibo-main .card-wrap ~ .weibo-rp{margin-top:0.5rem}.f-weibo.card9 .weibo-main .media-b{margin:.625rem 0 -.375rem}.f-weibo.card9 .weibo-main .media-b .m-auto-list{margin:0 0 -.25rem}.f-weibo .weibo-top .m-text-box{margin:.15rem 0 .15rem .5rem}.f-weibo .f-r{float:right}.f-weibo .weibo-main .weibo-og{font-size:.9375rem}.f-weibo .weibo-rp .weibo-text{font-size:.9375rem}.f-weibo .weibo-rp .f-footer-ctrl{padding:0.625rem 0 0}.f-weibo .f-bg-img{background-size:cover;background-repeat:no-repeat;background-position:center;position:absolute;width:100%;height:100%}.f-footer-ctrl{border-top-width:0;height:1.1rem;padding: 1rem .375rem 1rem 0;margin: 0 0.75rem}.f-footer-ctrl .m-diy-btn{color:rgba(40,47,60,0.8);height:100%;float:left}.f-footer-ctrl .m-diy-btn+.m-diy-btn{margin-left:1.6875rem}.f-footer-ctrl .m-diy-btn .m-icon{font-size:16px}.f-footer-ctrl aside{float:right;color:rgba(40,47,60,0.8)}.f-footer-ctrl .m-font{font-size:1rem;vertical-align:middle}.f-footer-ctrl .m-diy-btn h4{font-size:.8125rem;display:inline-block;margin-top:0;margin-left:.25rem}</style>
+
+  <link rel="preload" href="https://h5.sinaimg.cn/m/weibo-lite/js/vendor.9e10b5e9.js" as="script">
+  <link rel="preload" href="https://h5.sinaimg.cn/m/weibo-lite/js/app.9fa4434d.js" as="script">
+  <link rel="preload" href="https://h5.sinaimg.cn/m/weibo-lite/css/app.3d215d5b.css" as="style">
+  <link rel="preload" href="https://h5.sinaimg.cn/m/weibo-lite/js/manifest.722572c8.js" as="script">
+  <link rel="manifest" href="/static/pwa/manifest.json">
+<link href="https://h5.sinaimg.cn/m/weibo-lite/css/app.3d215d5b.css" rel="stylesheet"></head>
+<body>
+  <div id="app" class="m-container-max">
+    <router-view>
+      <div class="wb-item-wrap"><div class="wb-item"><div class="card m-panel card9 f-weibo"><div class="card-wrap"><header class="weibo-top m-box"><div class="m-avatar-box"><a href="javascript:;" class="m-img-box anim-load"></a></div><div class="m-box-dir m-box-col"><div class="m-text-box"><h4 class="m-text-cut f-r"></h4><h3 class="m-text-cut empty-bg width-min inline-block anim-load"></h3></div></div></header><article class="weibo-main"><div class="weibo-og"><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p></div></article><footer class="f-footer-ctrl"><div class="m-diy-btn"><i class="m-font m-font-forward"></i><h4>转发</h4></div><div class="m-diy-btn"><i class="m-font m-font-comment"></i><h4>评论</h4></div><div class="m-diy-btn"><i class="m-icon m-icon-like"></i><h4>赞</h4></div><aside><i class="f-more">...</i></aside></footer></div></div></div></div>
+      <div class="wb-item-wrap"><div class="wb-item"><div class="card m-panel card9 f-weibo"><div class="card-wrap"><header class="weibo-top m-box"><div class="m-avatar-box"><a href="javascript:;" class="m-img-box anim-load"></a></div><div class="m-box-dir m-box-col"><div class="m-text-box"><h4 class="m-text-cut f-r"></h4><h3 class="m-text-cut empty-bg width-min inline-block anim-load"></h3></div></div></header><article class="weibo-main"><div class="weibo-og"><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p></div></article><footer class="f-footer-ctrl"><div class="m-diy-btn"><i class="m-font m-font-forward"></i><h4>转发</h4></div><div class="m-diy-btn"><i class="m-font m-font-comment"></i><h4>评论</h4></div><div class="m-diy-btn"><i class="m-icon m-icon-like"></i><h4>赞</h4></div><aside><i class="f-more">...</i></aside></footer></div></div></div></div>
+      <div class="wb-item-wrap"><div class="wb-item"><div class="card m-panel card9 f-weibo"><div class="card-wrap"><header class="weibo-top m-box"><div class="m-avatar-box"><a href="javascript:;" class="m-img-box anim-load"></a></div><div class="m-box-dir m-box-col"><div class="m-text-box"><h4 class="m-text-cut f-r"></h4><h3 class="m-text-cut empty-bg width-min inline-block anim-load"></h3></div></div></header><article class="weibo-main"><div class="weibo-og"><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p></div></article><footer class="f-footer-ctrl"><div class="m-diy-btn"><i class="m-font m-font-forward"></i><h4>转发</h4></div><div class="m-diy-btn"><i class="m-font m-font-comment"></i><h4>评论</h4></div><div class="m-diy-btn"><i class="m-icon m-icon-like"></i><h4>赞</h4></div><aside><i class="f-more">...</i></aside></footer></div></div></div></div>
+      <div class="wb-item-wrap"><div class="wb-item"><div class="card m-panel card9 f-weibo"><div class="card-wrap"><header class="weibo-top m-box"><div class="m-avatar-box"><a href="javascript:;" class="m-img-box anim-load"></a></div><div class="m-box-dir m-box-col"><div class="m-text-box"><h4 class="m-text-cut f-r"></h4><h3 class="m-text-cut empty-bg width-min inline-block anim-load"></h3></div></div></header><article class="weibo-main"><div class="weibo-og"><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p></div></article><footer class="f-footer-ctrl"><div class="m-diy-btn"><i class="m-font m-font-forward"></i><h4>转发</h4></div><div class="m-diy-btn"><i class="m-font m-font-comment"></i><h4>评论</h4></div><div class="m-diy-btn"><i class="m-icon m-icon-like"></i><h4>赞</h4></div><aside><i class="f-more">...</i></aside></footer></div></div></div></div>
+    </router-view>
+      <mv-modal></mv-modal>
+  </div>
+  <script>
+  var config = {
+    env: 'prod',
+    st: '4cb7fd',
+    login: [][0],
+    uid: '',
+    pageConfig: [null][0] || {},
+    preferQuickapp: 0,
+    wm: '',
+    version: 'v2.1.33'
+  };
+  var $render_data = [{
+    "status": {
+        "created_at": "Thu Feb 08 23:25:32 +0800 2018",
+        "id": "4205293368200478",
+        "mid": "4205293368200478",
+        "can_edit": false,
+        "show_additional_indication": 0,
+        "text": "🌕<br /><br />月球上的唯一一件艺术作品<br /><br />“Fallen Astronaut 倒下的宇航员”<br />Paul Van Hoeydonck<br />(B.1925, Belgian)<br /><br />1971年，阿波罗15号的宇航员Dave Scott在没有得到NASA的允许下，悄悄地将一个由比利时艺术家Paul Van Hoeydonck制作的铝制小人放入口袋，带着它一同踏上了月球。<br /><br />在离开前，Dave Scott将小人永远地留在了月球的土地上。小人的背后，有一方小小的纪念牌，上面写着因盲目的美苏太空竞赛而失去生命的6位苏联宇航员和8位美国宇航员的名字，暗示着人类为此付出的高昂代价。<br /><br />月球上没有大气层，小人静静地躺在那儿，扑面而来的是宇宙深不可测的黑暗。",
+        "textLength": 518,
+        "source": "iPhone客户端",
+        "favorited": false,
+        "pic_ids": [
+            "00669kengy1fo9fmif1cxj30hs0g9n2h"
+        ],
+        "thumbnail_pic": "http://wx1.sinaimg.cn/thumbnail/00669kengy1fo9fmif1cxj30hs0g9n2h.jpg",
+        "bmiddle_pic": "http://wx1.sinaimg.cn/bmiddle/00669kengy1fo9fmif1cxj30hs0g9n2h.jpg",
+        "original_pic": "http://wx1.sinaimg.cn/large/00669kengy1fo9fmif1cxj30hs0g9n2h.jpg",
+        "is_paid": false,
+        "mblog_vip_type": 0,
+        "user": {
+            "id": 5587677731,
+            "screen_name": "为什么美术馆",
+            "profile_image_url": "https://tva2.sinaimg.cn/crop.10.0.620.620.180/00669kenjw8f4qmx1ibiqj30hs0h8dfv.jpg",
+            "profile_url": "https://m.weibo.cn/u/5587677731?uid=5587677731",
+            "statuses_count": 2467,
+            "verified": true,
+            "verified_type": 0,
+            "verified_type_ext": 1,
+            "verified_reason": "知名设计美学博主 头条文章作者 微博签约自媒体",
+            "close_blue_v": false,
+            "description": "在你身边，伴你一起，探索艺术&amp;旅行之最动人处！✨合作邮箱：ichbinwhying@163.com✨insta：wwarum_",
+            "gender": "f",
+            "mbtype": 12,
+            "urank": 38,
+            "mbrank": 5,
+            "follow_me": false,
+            "following": false,
+            "followers_count": 1303153,
+            "follow_count": 835,
+            "cover_image_phone": "https://tva1.sinaimg.cn/crop.0.0.640.640.640/00669kenjw1f3043yg2lfj30hs0hr75a.jpg",
+            "avatar_hd": "https://ww2.sinaimg.cn/orj480/00669kenjw8f4qmx1ibiqj30hs0h8dfv.jpg",
+            "like": false,
+            "like_me": false,
+            "badge": {
+                "bind_taobao": 1,
+                "vip_activity2": 1,
+                "dzwbqlx_2016": 1,
+                "follow_whitelist_video": 1,
+                "panda": 1,
+                "user_name_certificate": 1
+            }
+        },
+        "picStatus": "0:1",
+        "reposts_count": 3800,
+        "comments_count": 265,
+        "attitudes_count": 10137,
+        "pending_approval_count": 0,
+        "isLongText": true,
+        "reward_exhibition_type": 2,
+        "reward_scheme": "sinaweibo://reward?bid=1000293251&enter_id=1000293251&enter_type=1&oid=4205293368200478&seller=5587677731&share=18cb5613ebf3d8aadd9975c1036ab1f47&sign=2e9790961ad7eeae233a9de7f195989c",
+        "hide_flag": 0,
+        "visible": {
+            "type": 0,
+            "list_id": 0
+        },
+        "mblogtype": 0,
+        "more_info_type": 0,
+        "content_auth": 0,
+        "pics": [
+            {
+                "pid": "00669kengy1fo9fmif1cxj30hs0g9n2h",
+                "url": "https://wx1.sinaimg.cn/orj360/00669kengy1fo9fmif1cxj30hs0g9n2h.jpg",
+                "size": "orj360",
+                "geo": {
+                    "width": 295,
+                    "height": 270,
+                    "croped": false
+                },
+                "large": {
+                    "size": "large",
+                    "url": "https://wx1.sinaimg.cn/large/00669kengy1fo9fmif1cxj30hs0g9n2h.jpg",
+                    "geo": {
+                        "width": "640",
+                        "height": "585",
+                        "croped": false
+                    }
+                }
+            }
+        ],
+        "bid": "G2dHGypjM",
+        "buttons": [
+            {
+                "type": "follow",
+                "name": "关注",
+                "sub_type": 0,
+                "params": {
+                    "uid": 5587677731
+                }
+            }
+        ],
+        "status_title": "🌕月球上的唯一一件艺术作品“Fallen...",
+        "ok": 1,
+        "scheme": "https://weibo.cn/appurl?scheme=sinaweibo%3A%2F%2Fdetail%3Fmblogid%3D4205293368200478%26luicode%3D20000061%26lfid%3D4205293368200478&luicode=20000061&lfid=4205293368200478",
+        "tipScheme": "https://weibo.cn/appurl?scheme=sinaweibo%3A%2F%2Fdetail%3Fmblogid%3D4205293368200478%26luicode%3D20000061%26lfid%3D4205293368200478&luicode=20000061&lfid=4205293368200478"
+    },
+    "hotScheme": "https://m.weibo.cn/p/index?containerid=102803&luicode=20000061&lfid=4205293368200478",
+    "appScheme": "https://m.weibo.cn?luicode=20000061&lfid=4205293368200478",
+    "callUinversalLink": false,
+    "callWeibo": false,
+    "hit": true,
+    "is_gray": 0,
+    "schemeOrigin": false,
+    "appLink": "sinaweibo://detail?mblogid=4205293368200478&luicode=20000061&lfid=4205293368200478",
+    "xianzhi_scheme": "xianzhi://mblogshow?mid=4205293368200478"
+}][0] || {};
+  var __wb_performance_data={v:"v8",m:"mainsite",pwa:1,sw:0};
+  </script>
+  <script src="/static/pwa/sw-registration.js"></script>
+  <script src="https://h5.sinaimg.cn/upload/1005/16/2017/11/30/wbp.js" id="__wb_performance_log" data-rate="0.1"></script>
+<script type="text/javascript" src="https://h5.sinaimg.cn/m/weibo-lite/js/manifest.722572c8.js"></script><script type="text/javascript" src="https://h5.sinaimg.cn/m/weibo-lite/js/vendor.9e10b5e9.js"></script><script type="text/javascript" src="https://h5.sinaimg.cn/m/weibo-lite/js/app.9fa4434d.js"></script></body>
+</html>

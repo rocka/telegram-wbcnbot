@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <link rel="dns-prefetch" href="//h5.sinaimg.cn">
+    <link rel="icon" sizes="any" mask href="//h5.sinaimg.cn/upload/2015/05/15/28/WeiboLogoCh.svg" color="black">
+    <link rel="apple-touch-icon" href="https://h5.sinaimg.cn/upload/1005/453/2018/06/15/QQ20180615-0.jpg">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>微博正文 - 微博HTML5版</title>
+    <meta content="随时随地发现新鲜事！微博带你欣赏世界上每一个精彩瞬间，了解每一个幕后故事。分享你想表达的，让全世界都能听到你的心声！" name="description">
+    <meta name="theme-color" content="#F3F3F3">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+        <link rel="stylesheet" href="//h5.sinaimg.cn/marvel/v1.4.0/css/lib/base.css">
+    <link rel="stylesheet" href="//h5.sinaimg.cn/marvel/v1.4.0/css/card/cards.css">
+    <script>!function(e){var a,i=navigator.userAgent.toLowerCase(),n=document.documentElement,t=parseInt(n.clientWidth);if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)||i.indexOf("like mac os x")>0){var s=/os [\d._]*/gi,o=i.match(s);a=(o+"").replace(/[^0-9|_.]/gi,"").replace(/_/gi,".")}var r=a+"";"undefined"!=r&&r.length>0&&(a=parseInt(r),a>=8&&(375==t||667==t||320==t||568==t||480==t)?n.className="iosx2":(a>=8&&414==t||736==t)&&(n.className="iosx3")),/(Android)/i.test(navigator.userAgent)&&(n.className="android")}(window);</script>
+        <style>html, body, #app {height: 100%;}[v-cloak] {display: none;}.wb-item-wrap .card9.card{margin:0}.f-weibo .m-img-box{background-color:#e6e6e6}.empty-bg{width:100%;background-color:#e6e6e6;height:.375rem}.inline-block{display:inline-block}.txt-margin{margin:0 0 1rem 0}.width-min{width:4.375rem}.anim-load{animation:load .5s ease-out;-moz-animation:load .5s ease-out;-webkit-animation:load .5s ease-out;-o-animation:load .5s ease-out}@keyframes load{0%{background-color:#fff}100%{background-color:#e6e6e6}}@-moz-keyframes load{0%{background-color:#fff}100%{background-color:#e6e6e6}}@-webkit-keyframes load{0%{background-color:#fff}100%{background-color:#e6e6e6}}.f-more{letter-spacing:.1rem}.f-weibo .f-card-title{margin:-1rem -1rem .5rem -1rem;padding:0 1rem;border-width:0}.f-weibo .m-avatar-box .m-img-box .m-icon{font-size:14px}.iosx3 .card9 .f-card-title{border-width:0}.iosx2 .card9 .f-card-title{border-width:0}.f-weibo.card9{border-bottom:1px solid #e6e6e6}.iosx3 .f-weibo.card9{border-bottom:.36px solid #e6e6e6}.iosx2 .f-weibo.card9{border-bottom:.5px solid #e6e6e6}.f-weibo.card9>.card-wrap{margin-left:.75rem;margin-right:.75rem}.f-weibo.card9.m-panel{border-top-width:0}.f-weibo.card .card-wrap .f-col-wrap{padding:0 .9375rem}.f-weibo.card9 .m-box-col{min-width:0}.f-weibo.card9 .weibo-top{padding:0 0 0 .25rem}.f-weibo.card9 .weibo-top .m-box-col .m-icon{margin-left:3px}.f-weibo.card9 .weibo-main .weibo-og{padding:.75rem 0 0 .25rem}.f-weibo.card9 .weibo-main .card-wrap ~ .weibo-rp{margin-top:0.5rem}.f-weibo.card9 .weibo-main .media-b{margin:.625rem 0 -.375rem}.f-weibo.card9 .weibo-main .media-b .m-auto-list{margin:0 0 -.25rem}.f-weibo .weibo-top .m-text-box{margin:.15rem 0 .15rem .5rem}.f-weibo .f-r{float:right}.f-weibo .weibo-main .weibo-og{font-size:.9375rem}.f-weibo .weibo-rp .weibo-text{font-size:.9375rem}.f-weibo .weibo-rp .f-footer-ctrl{padding:0.625rem 0 0}.f-weibo .f-bg-img{background-size:cover;background-repeat:no-repeat;background-position:center;position:absolute;width:100%;height:100%}.f-footer-ctrl{border-top-width:0;height:1.1rem;padding: 1rem .375rem 1rem 0;margin: 0 0.75rem}.f-footer-ctrl .m-diy-btn{color:rgba(40,47,60,0.8);height:100%;float:left}.f-footer-ctrl .m-diy-btn+.m-diy-btn{margin-left:1.6875rem}.f-footer-ctrl .m-diy-btn .m-icon{font-size:16px}.f-footer-ctrl aside{float:right;color:rgba(40,47,60,0.8)}.f-footer-ctrl .m-font{font-size:1rem;vertical-align:middle}.f-footer-ctrl .m-diy-btn h4{font-size:.8125rem;display:inline-block;margin-top:0;margin-left:.25rem}</style>
+
+  <link rel="preload" href="https://h5.sinaimg.cn/m/weibo-lite/js/vendor.9e10b5e9.js" as="script">
+  <link rel="preload" href="https://h5.sinaimg.cn/m/weibo-lite/js/app.9fa4434d.js" as="script">
+  <link rel="preload" href="https://h5.sinaimg.cn/m/weibo-lite/css/app.3d215d5b.css" as="style">
+  <link rel="preload" href="https://h5.sinaimg.cn/m/weibo-lite/js/manifest.722572c8.js" as="script">
+  <link rel="manifest" href="/static/pwa/manifest.json">
+<link href="https://h5.sinaimg.cn/m/weibo-lite/css/app.3d215d5b.css" rel="stylesheet"></head>
+<body>
+  <div id="app" class="m-container-max">
+    <router-view>
+      <div class="wb-item-wrap"><div class="wb-item"><div class="card m-panel card9 f-weibo"><div class="card-wrap"><header class="weibo-top m-box"><div class="m-avatar-box"><a href="javascript:;" class="m-img-box anim-load"></a></div><div class="m-box-dir m-box-col"><div class="m-text-box"><h4 class="m-text-cut f-r"></h4><h3 class="m-text-cut empty-bg width-min inline-block anim-load"></h3></div></div></header><article class="weibo-main"><div class="weibo-og"><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p></div></article><footer class="f-footer-ctrl"><div class="m-diy-btn"><i class="m-font m-font-forward"></i><h4>转发</h4></div><div class="m-diy-btn"><i class="m-font m-font-comment"></i><h4>评论</h4></div><div class="m-diy-btn"><i class="m-icon m-icon-like"></i><h4>赞</h4></div><aside><i class="f-more">...</i></aside></footer></div></div></div></div>
+      <div class="wb-item-wrap"><div class="wb-item"><div class="card m-panel card9 f-weibo"><div class="card-wrap"><header class="weibo-top m-box"><div class="m-avatar-box"><a href="javascript:;" class="m-img-box anim-load"></a></div><div class="m-box-dir m-box-col"><div class="m-text-box"><h4 class="m-text-cut f-r"></h4><h3 class="m-text-cut empty-bg width-min inline-block anim-load"></h3></div></div></header><article class="weibo-main"><div class="weibo-og"><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p></div></article><footer class="f-footer-ctrl"><div class="m-diy-btn"><i class="m-font m-font-forward"></i><h4>转发</h4></div><div class="m-diy-btn"><i class="m-font m-font-comment"></i><h4>评论</h4></div><div class="m-diy-btn"><i class="m-icon m-icon-like"></i><h4>赞</h4></div><aside><i class="f-more">...</i></aside></footer></div></div></div></div>
+      <div class="wb-item-wrap"><div class="wb-item"><div class="card m-panel card9 f-weibo"><div class="card-wrap"><header class="weibo-top m-box"><div class="m-avatar-box"><a href="javascript:;" class="m-img-box anim-load"></a></div><div class="m-box-dir m-box-col"><div class="m-text-box"><h4 class="m-text-cut f-r"></h4><h3 class="m-text-cut empty-bg width-min inline-block anim-load"></h3></div></div></header><article class="weibo-main"><div class="weibo-og"><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p></div></article><footer class="f-footer-ctrl"><div class="m-diy-btn"><i class="m-font m-font-forward"></i><h4>转发</h4></div><div class="m-diy-btn"><i class="m-font m-font-comment"></i><h4>评论</h4></div><div class="m-diy-btn"><i class="m-icon m-icon-like"></i><h4>赞</h4></div><aside><i class="f-more">...</i></aside></footer></div></div></div></div>
+      <div class="wb-item-wrap"><div class="wb-item"><div class="card m-panel card9 f-weibo"><div class="card-wrap"><header class="weibo-top m-box"><div class="m-avatar-box"><a href="javascript:;" class="m-img-box anim-load"></a></div><div class="m-box-dir m-box-col"><div class="m-text-box"><h4 class="m-text-cut f-r"></h4><h3 class="m-text-cut empty-bg width-min inline-block anim-load"></h3></div></div></header><article class="weibo-main"><div class="weibo-og"><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p><p class="empty-bg txt-margin anim-load"></p></div></article><footer class="f-footer-ctrl"><div class="m-diy-btn"><i class="m-font m-font-forward"></i><h4>转发</h4></div><div class="m-diy-btn"><i class="m-font m-font-comment"></i><h4>评论</h4></div><div class="m-diy-btn"><i class="m-icon m-icon-like"></i><h4>赞</h4></div><aside><i class="f-more">...</i></aside></footer></div></div></div></div>
+    </router-view>
+      <mv-modal></mv-modal>
+  </div>
+  <script>
+  var config = {
+    env: 'prod',
+    st: 'fb3670',
+    login: [][0],
+    uid: '',
+    pageConfig: [null][0] || {},
+    preferQuickapp: 0,
+    wm: '',
+    version: 'v2.1.33'
+  };
+  var $render_data = [{
+    "status": {
+        "created_at": "Sat Apr 28 21:03:27 +0800 2018",
+        "id": "4233886252786462",
+        "mid": "4233886252786462",
+        "edit_count": 1,
+        "can_edit": false,
+        "edit_at": "Sat Apr 28 21:09:24 +0800 2018",
+        "show_additional_indication": 0,
+        "text": "<a  href=\"https://m.weibo.cn/search?containerid=231522type%3D1%26q%3D%23%E7%99%BD%E5%AD%A6%E7%A0%94%E7%A9%B6%23%26t%3D10&isnewpage=1\" data-hide=\"\"><span class=\"surl-text\">#白学研究#</span></a> 【用现实世界的时间尺度衡量WA2(终篇)】迄今为止，你从白学身上获得了什么？<br /><br />时间的流逝速度，是恒定不变的吗？<br /><br />&quot;为什么你那么熟练啊！你和雪菜……究竟亲过几次了啊！&quot;<br /><br />2008年2月9日晚，在说出这句话之后，冬马转身跑开。<br /><br />那一天，距离学园祭雪菜表白，已经过去了77天。<br /><br />与之相对的，从07.10.15到08.2.29，整个IC合计137天。<br /><br />即，在整个IC的56%的时间里，冬马都在承受难以忍受的酷刑。<br /><br />再与之相对的，从雪菜首次出场到表白，一共是38天，约等于冬马忍受酷刑时间的一半。<br /><br />读到这里你也许发现了：38,77,137这三个数字的大小关系，似乎和你对IC的固有印象，相当的不一样。<br /><br />我在《中篇》中提到：记忆是具有波粒二象性的东西。因为人类只能在记忆中保存若干个不连续重要事件，故而导致人类记忆中的时间流，不仅不均匀，而且不连续。<br /><br />你对IC的记忆也是这样的：学园祭、熟练街、机场送别是IC最重要的三件事。所以在这三个时间点附近，你的记忆变得很慢。<br /><br />不仅如此，丸户史明也在操控你的记忆——他在矛盾集中爆发的关键剧情点附近，把文字量加大、把剧本拉长，强行让故事节奏变慢。<br /><br />主观世界里的时间流逝速度，是恒定不变的吗？<br /><br />在吃瓜群众的主观世界里，IC里时间流逝最快的时间段，是学园祭之后的12月和1月。因为在这两个月里，没有重要事件，剧本文字量很少。<br /><br />但在春雪冬三人的主观世界里，这两个月过的可一点都不快——因为冬马要和母亲痛忆家族情史、春希雪菜要辅导冬马突击备考、考完之后三人要去泡温泉、泡完温泉冬马要备战比赛、春希在这期间还要抓紧时间提高接吻熟练度——这一连串事情的密度，可不亚于备战学园祭的日子。<br /><br />同一个人的主观世界里的时间流逝速度，是恒定不变的吗？<br /><br />&quot;是我先的，明明是我先的。接吻也好，拥抱也好，还是喜欢上那家伙也好。&quot;<br /><br />5年后，在同一间屋子里，冬马还原了当时的真相。<br /><br />在冬马的这5年里，时间的流逝是恒定不变的吗？显然不是。她能将5年前那一晚的每一个细节如摄影机般精确复现，但却在5年后对这5年的海外生活只字不提。<br /><br />你也许会说，她这是选择性遗忘。<br /><br />但你也好不到哪去：难道你敢保证你自己就没有再也不想回忆起的梦魇吗？<br /><br />然而，在你的主观世界里，时间流逝速度，一定是……越来越快的。<br /><br />幼儿园时候的你，觉得过年是不得了的大事。如今，你已经对各种长假麻木了；小学时候的你，能在10分钟的课间里玩出各种花样。如今，即使是45分钟的一节课，刷刷手机就瞬间下课了。高中的你，觉得一天10几节课简直漫长，现在你早上去图书馆坐下翻开书，等你再抬起屁股，太阳都下山了。<br /><br />你在小学语文课上写下的&quot;时间过的真快&quot;这句话，如今真的一语成谶了。不仅如此，时间还过的越来越快了。<br /><br />是因为时间本身的流逝速度变快了吗？没有。<br /><br />而是因为，你的人生变长了，相同长度的时间段在你的人生长度中所占的比例越来越少了。<br /><br />同样是过一次春节，5岁的你，过春节=人生的20%；10岁的你，过春节=人生的10%；20岁的你，过春节=人生的5%……等你100岁的时候，过春节=人生的1%。<br /><br />为什么&quot;劝君珍惜少年时&quot;之类的话，总出自老年人之口？因为你只有到了他们那个年纪，才会彻底的理解&quot;光阴似箭&quot;究竟有多快、&quot;一寸光阴一寸金&quot;究竟有多值钱、&quot;八九点钟的太阳&quot;究竟有多美好。<br /><br />你花了那么多时间研究白学，花了半年多的时间跟着我一天天回忆历史上的今天，你真的，理解了，&quot;时间的流逝&quot;，这五个字，了吗？<br /><br />没有也没关系。因为你珍不珍惜时间和别人没关系。<br /><br />顶多就是现实人生里的NE和TE的区别。<br /><br />---------<br />上篇→<a data-url=\"http://t.cn/RnGrU64\" href=\"https://weibo.com/1693318147/G61qZm6uU\" data-hide=\"\"><span class='url-icon'><img style='width: 1rem;height: 1rem' src='https://h5.sinaimg.cn/upload/2015/09/25/3/timeline_card_small_web_default.png'></span><span class=\"surl-text\">网页链接</span></a><br />中篇→<a data-url=\"http://t.cn/RuSW9WP\" href=\"https://weibo.com/1693318147/G7WxkxGwf\" data-hide=\"\"><span class='url-icon'><img style='width: 1rem;height: 1rem' src='https://h5.sinaimg.cn/upload/2015/09/25/3/timeline_card_small_web_default.png'></span><span class=\"surl-text\">网页链接</span></a>",
+        "textLength": 2891,
+        "source": "微博 weibo.com",
+        "favorited": false,
+        "pic_ids": [
+            "64edfc03ly1fqso6inc7mj20sg0g0x61",
+            "64edfc03ly1fqso6l583dj20sg0g0e7k",
+            "64edfc03ly1fqso5fckj6j20zk0k01kx",
+            "64edfc03ly1fqso5imkfyj20zk0k01kx"
+        ],
+        "thumbnail_pic": "http://wx1.sinaimg.cn/thumbnail/64edfc03ly1fqso6inc7mj20sg0g0x61.jpg",
+        "bmiddle_pic": "http://wx1.sinaimg.cn/bmiddle/64edfc03ly1fqso6inc7mj20sg0g0x61.jpg",
+        "original_pic": "http://wx1.sinaimg.cn/large/64edfc03ly1fqso6inc7mj20sg0g0x61.jpg",
+        "is_paid": false,
+        "mblog_vip_type": 0,
+        "user": {
+            "id": 1693318147,
+            "screen_name": "冬馬和紗_ToumaKazusa",
+            "profile_image_url": "https://tvax4.sinaimg.cn/crop.0.11.1125.1125.180/64edfc03ly8fex4ruild5j20v90vvn2y.jpg",
+            "profile_url": "https://m.weibo.cn/u/1693318147?uid=1693318147",
+            "statuses_count": 6549,
+            "verified": true,
+            "verified_type": 0,
+            "verified_type_ext": 0,
+            "verified_reason": "动漫博主",
+            "close_blue_v": false,
+            "description": "看置顶！",
+            "gender": "f",
+            "mbtype": 12,
+            "urank": 46,
+            "mbrank": 6,
+            "follow_me": false,
+            "following": false,
+            "followers_count": 11343,
+            "follow_count": 524,
+            "cover_image_phone": "https://wx2.sinaimg.cn/crop.0.0.640.640.640/64edfc03gy1fff6kv9ryhj20v90v9gra.jpg",
+            "avatar_hd": "https://wx4.sinaimg.cn/orj480/64edfc03ly8fex4ruild5j20v90vvn2y.jpg",
+            "like": false,
+            "like_me": false,
+            "badge": {
+                "bind_taobao": 1,
+                "unread_pool": 1,
+                "unread_pool_ext": 1,
+                "dzwbqlx_2016": 1,
+                "panda": 1,
+                "user_name_certificate": 1,
+                "worldcup_2018": 34
+            }
+        },
+        "reposts_count": 54,
+        "comments_count": 8,
+        "attitudes_count": 64,
+        "pending_approval_count": 0,
+        "isLongText": true,
+        "reward_exhibition_type": 0,
+        "hide_flag": 0,
+        "visible": {
+            "type": 0,
+            "list_id": 0
+        },
+        "mblogtype": 0,
+        "more_info_type": 0,
+        "cardid": "star_031",
+        "content_auth": 0,
+        "page_info": {
+            "type": "search_topic",
+            "object_type": 0,
+            "page_pic": {
+                "url": "https://wx2.sinaimg.cn/large/64edfc03ly1frmtcce3ihj20ku0bpabg.jpg"
+            },
+            "page_url": "https://m.weibo.cn/search?containerid=231522type%3D1%26q%3D%23%E7%99%BD%E5%AD%A6%E7%A0%94%E7%A9%B6%23%26t%3D10&isnewpage=1",
+            "page_title": "#白学研究#",
+            "content1": "",
+            "content2": "0人关注"
+        },
+        "pics": [
+            {
+                "pid": "64edfc03ly1fqso6inc7mj20sg0g0x61",
+                "url": "https://wx1.sinaimg.cn/orj360/64edfc03ly1fqso6inc7mj20sg0g0x61.jpg",
+                "size": "orj360",
+                "geo": {
+                    "width": 480,
+                    "height": 270,
+                    "croped": false
+                },
+                "large": {
+                    "size": "large",
+                    "url": "https://wx1.sinaimg.cn/large/64edfc03ly1fqso6inc7mj20sg0g0x61.jpg",
+                    "geo": {
+                        "width": "1024",
+                        "height": "576",
+                        "croped": false
+                    }
+                }
+            },
+            {
+                "pid": "64edfc03ly1fqso6l583dj20sg0g0e7k",
+                "url": "https://wx2.sinaimg.cn/orj360/64edfc03ly1fqso6l583dj20sg0g0e7k.jpg",
+                "size": "orj360",
+                "geo": {
+                    "width": 480,
+                    "height": 270,
+                    "croped": false
+                },
+                "large": {
+                    "size": "large",
+                    "url": "https://wx2.sinaimg.cn/large/64edfc03ly1fqso6l583dj20sg0g0e7k.jpg",
+                    "geo": {
+                        "width": "1024",
+                        "height": "576",
+                        "croped": false
+                    }
+                }
+            },
+            {
+                "pid": "64edfc03ly1fqso5fckj6j20zk0k01kx",
+                "url": "https://wx2.sinaimg.cn/orj360/64edfc03ly1fqso5fckj6j20zk0k01kx.jpg",
+                "size": "orj360",
+                "geo": {
+                    "width": 480,
+                    "height": 270,
+                    "croped": false
+                },
+                "large": {
+                    "size": "large",
+                    "url": "https://wx2.sinaimg.cn/large/64edfc03ly1fqso5fckj6j20zk0k01kx.jpg",
+                    "geo": {
+                        "width": "1280",
+                        "height": "720",
+                        "croped": false
+                    }
+                }
+            },
+            {
+                "pid": "64edfc03ly1fqso5imkfyj20zk0k01kx",
+                "url": "https://wx1.sinaimg.cn/orj360/64edfc03ly1fqso5imkfyj20zk0k01kx.jpg",
+                "size": "orj360",
+                "geo": {
+                    "width": 480,
+                    "height": 270,
+                    "croped": false
+                },
+                "large": {
+                    "size": "large",
+                    "url": "https://wx1.sinaimg.cn/large/64edfc03ly1fqso5imkfyj20zk0k01kx.jpg",
+                    "geo": {
+                        "width": "1280",
+                        "height": "720",
+                        "croped": false
+                    }
+                }
+            }
+        ],
+        "bid": "GedxfbGSW",
+        "buttons": [
+            {
+                "type": "follow",
+                "name": "关注",
+                "sub_type": 0,
+                "params": {
+                    "uid": 1693318147
+                }
+            }
+        ],
+        "status_title": "用现实世界的时间尺度衡量WA2(终篇)",
+        "ok": 1,
+        "scheme": "https://weibo.cn/appurl?scheme=sinaweibo%3A%2F%2Fdetail%3Fmblogid%3D4233886252786462%26luicode%3D20000061%26lfid%3D4233886252786462&luicode=20000061&lfid=4233886252786462",
+        "tipScheme": "https://weibo.cn/appurl?scheme=sinaweibo%3A%2F%2Fdetail%3Fmblogid%3D4233886252786462%26luicode%3D20000061%26lfid%3D4233886252786462&luicode=20000061&lfid=4233886252786462"
+    },
+    "hotScheme": "https://m.weibo.cn/p/index?containerid=102803&luicode=20000061&lfid=4233886252786462",
+    "appScheme": "https://m.weibo.cn?luicode=20000061&lfid=4233886252786462",
+    "callUinversalLink": false,
+    "callWeibo": false,
+    "hit": true,
+    "is_gray": 0,
+    "schemeOrigin": false,
+    "appLink": "sinaweibo://detail?mblogid=4233886252786462&luicode=20000061&lfid=4233886252786462",
+    "xianzhi_scheme": "xianzhi://mblogshow?mid=4233886252786462"
+}][0] || {};
+  var __wb_performance_data={v:"v8",m:"mainsite",pwa:1,sw:0};
+  </script>
+  <script src="/static/pwa/sw-registration.js"></script>
+  <script src="https://h5.sinaimg.cn/upload/1005/16/2017/11/30/wbp.js" id="__wb_performance_log" data-rate="0.1"></script>
+<script type="text/javascript" src="https://h5.sinaimg.cn/m/weibo-lite/js/manifest.722572c8.js"></script><script type="text/javascript" src="https://h5.sinaimg.cn/m/weibo-lite/js/vendor.9e10b5e9.js"></script><script type="text/javascript" src="https://h5.sinaimg.cn/m/weibo-lite/js/app.9fa4434d.js"></script></body>
+</html>
