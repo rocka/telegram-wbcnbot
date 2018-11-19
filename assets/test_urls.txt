@@ -1,5 +1,14 @@
+单张图片
 http://localhost:2233/p/4205293368200478?k
+
+纯文字
 http://localhost:2233/p/4228041762159011?k
+
+微博文章
 http://localhost:2233/p/4305127626184942?k
+
+话题，多图
 http://localhost:2233/p/4233886252786462?k
+
+视频
 http://localhost:2233/p/H3fcUCMsV?k
