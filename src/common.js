@@ -70,8 +70,8 @@ function makeLocals(url, { data, config, performance }) {
     };
     // TODO: support type: search_topic ?
     // TODO: handle retweets
-    if (data.status.pics) info.type = 'picture';
-    switch (info.type) {
+    if (data.status.pics) locals.type = 'picture';
+    switch (locals.type) {
         case 'picture':
             locals.picture = data.status.pics.map(p => p.large.url);
             locals.picture_thumb = data.status.pics.map(p => p.url);
@@ -101,7 +101,10 @@ async function getRawConfig(url) {
 
 async function getLocals(url) {
     const config = await getRawConfig(url);
-    return makeLocals(url, config);
+    if (config.data) {
+        return makeLocals(url, config);
+    }
+    return {};
 }
 
 module.exports = {
