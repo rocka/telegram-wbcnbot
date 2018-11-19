@@ -2,8 +2,6 @@ doctype html
 html(lang="zh" prefix="og: http://ogp.me/ns#")
     head
         meta(charset="UTF-8")
-        if !keep
-            meta(http-equiv="refresh" content=`0; url=${url}`)
         meta(property="og:locale" content="zh_CN")
         meta(property="og:site_name" content="新浪微博")
         meta(property="og:url" content=url)
@@ -14,4 +12,7 @@ html(lang="zh" prefix="og: http://ogp.me/ns#")
         meta(property="og:description" content=content)
         block addition
         title #{title}
-    body
+    if keep
+        body
+    else 
+        body(onload=`location.href="${url}"`)
