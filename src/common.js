@@ -4,34 +4,41 @@ const VM = require('vm');
 const fetch = require('node-fetch');
 const Cheerio = require('cheerio');
 
-function testURL(url) {
-    if (url.startsWith('https://m.weibo.cn/')
-        || url.startsWith('m.weibo.cn/')
-        || url.startsWith('http://m.weibo.cn/')
-        || url.startsWith('https://weibo.com/')
-        || url.startsWith('weibo.com/')
-        || url.startsWith('http://weibo.com/')) {
-        return true
-    }
-    return false;
-}
+const WeiboURL = [
+    'https://m.weibo.cn/',
+    'm.weibo.cn/',
+    'http://m.weibo.cn/',
+    'https://weibo.com/',
+    'weibo.com/',
+    'http://weibo.com/'
+];
 
+/**
+ * @param {string} id
+ */
 function getWeiboURL(id) {
-    if (testURL(id)) {
+    if (WeiboURL.some(u => id.startsWith(u))) {
         return id;
     }
     return `https://m.weibo.cn/detail/${id}`;
 }
 
+/**
+ * @param {string} url
+ * @returns {Promise<string>}
+ */
 function getWeiboHTML(url) {
     return fetch(url, {
         headers: {
-            'Accept-Encoding': 'gzip',
             'User-Agent': 'Mozilla/5.0 (Android 6.0) Chrome/7.0'
-        }
+        },
+        compress: true
     }).then(r => r.text());
 }
 
+/**
+ * @param {string[]} scripts 
+ */
 function runScripts(scripts) {
     const sandbox = VM.createContext({
         navigator: {
@@ -108,7 +115,6 @@ async function getLocals(url) {
 }
 
 module.exports = {
-    testURL,
     getWeiboURL,
     getWeiboHTML,
     runScripts,
