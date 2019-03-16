@@ -83,10 +83,14 @@ function getTweetStatus(status) {
         });
         $('a').each((i, e) => {
             const a = $(e);
-            if (a.text() === '网页链接') {
-                a.replaceWith(`<a href="${a.attr('href')}">${a.attr('href')}</a>`);
-            } else if (a.text() === '查看图片') {
-                a.replaceWith(`<img src="${a.attr('href')}"/>`);
+            switch (a.text()) {
+                case '网页链接':
+                    a.replaceWith(`<a href="${a.attr('href')}">${a.attr('href')}</a>`);
+                    break;
+                case '查看图片':
+                case '评论配图':
+                    a.replaceWith(`<img src="${a.attr('href')}"/>`);
+                    break;
             }
         });
         html = $('body').html();
