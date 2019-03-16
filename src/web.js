@@ -18,7 +18,7 @@ router.get('/p/:id', async (ctx) => {
     if (keep) {
         locals.keep = keep;
     }
-    ctx.body = Pug.renderFile(`./templates/${locals.type}.pug`, locals);
+    ctx.body = Pug.renderFile('./templates/detail_page.pug', locals);
 });
 
 router.get('/json/:id', async (ctx) => {

@@ -1,0 +1,22 @@
+mixin pictureContent
+    div
+        each url in picture
+            img(src=url)
+
+mixin videoContent
+    div
+        each url in video
+            video(src=url controls)
+
+.tweet
+    .tweet_user
+        img(src=user.avatar)
+        span.user_name !{user.name}
+    .tweet_content
+        div
+            != content.html
+        case type
+            when 'picture'
+                +pictureContent()
+            when 'video'
+                +videoContent()

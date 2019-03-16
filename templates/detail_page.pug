@@ -1,0 +1,49 @@
+mixin artileMeta
+    meta(property="og:type" content="article")
+    each url in cover
+        meta(property="og:image" content=url)
+        meta(property="image:user_generated" content="true")
+
+mixin textMeta
+    meta(property="og:type" content="article")
+
+mixin pictureMeta
+    meta(property="og:type" content="article")
+    each url in picture
+        meta(property="og:image" content=url)
+        meta(property="image:user_generated" content="true")
+
+mixin videoMeta
+    meta(property="og:type" content="video")
+    each url in video
+        meta(property="og:video:url" content=url)
+        meta(property="og:video:type" content="video/mp4")
+    each url in thumbnail
+        meta(property="og:image" content=url)
+
+doctype html
+html(lang="zh" prefix="og: http://ogp.me/ns#")
+    head
+        meta(charset="UTF-8")
+        meta(property="og:locale" content="zh_CN")
+        title #{title}
+        meta(property="og:site_name" content="新浪微博")
+        meta(property="og:url" content=url)
+        meta(property="og:title" content=`${user.name} 的微博`)
+        meta(property="og:article:published_time" content=time)
+        meta(property="og:article:author:username" content=user.name)
+        meta(property="og:description" content=content.text)
+        link(rel="shortcut icon" href="https://h5.sinaimg.cn/upload/696/2017/08/23/weibologo.png")
+        case type
+            when 'article'
+                +articleMeta()
+            when 'text'
+                +textMeta()
+            when 'picture'
+                +pictureMeta()
+            when 'video'
+                +videoMeta()
+    body(onload=keep?false:`location.href="${url}"`)
+        include tweet.pug
+        if retweet
+            include retweet.pug
