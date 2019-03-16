@@ -1,10 +1,10 @@
 mixin pictureContent
-    div
+    div.picture
         each url in retweet.picture
             img(src=url)
 
 mixin videoContent
-    div
+    div.video
         each url in retweet.video
             video(src=url controls)
 
@@ -12,9 +12,8 @@ blockquote.retweet
     span.user_name !{retweet.user.name}
     div
         != retweet.content.html
-    div
-        case retweet.type
-            when 'picture'
-                +pictureContent()
-            when 'video'
-                +videoContent()
+    case retweet.type
+        when 'picture'
+            +pictureContent()
+        when 'video'
+            +videoContent()

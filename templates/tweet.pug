@@ -1,10 +1,10 @@
 mixin pictureContent
-    div
+    div.picture
         each url in picture
             img(src=url)
 
 mixin videoContent
-    div
+    div.video
         each url in video
             video(src=url controls)
 
