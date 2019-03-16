@@ -66,9 +66,9 @@ function runScripts(scripts) {
 
 function getTweetStatus(status) {
     let text, html;
-    if (status.isLongText) {
+    if (status.isLongText && status.longText) {
         text = status.longText.longTextContent;
-        html = status.longText.longTextContent;
+        html = text;
         status.longText.url_objects.forEach(o => {
             text = text.replace(o.url_ori, o.info.url_long);
             html = html.replace(o.url_ori, `<a href="${o.info.url_long}">${o.info.url_long}</a>`);
