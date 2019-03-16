@@ -1,24 +1,31 @@
 'use strict';
 
+const qs = require('querystring');
+
 const Telegraf = require('telegraf');
 
 const Common = require('./common');
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
+const rhash = process.env.IV_RHASH;
 
 function makeTextMsg(locals) {
     if (!locals.id) {
         return [];
     }
+    let url = `${process.env.DOMAIN}/p/${locals.id}`;
+    if (rhash) {
+        url = `https://t.me/iv?${qs.stringify({ rhash, url })}`
+    }
     return [{
         type: 'article',
         id: `${locals.id}_a`,
-        title: locals.title,
+        title: `${locals.user.name} 的微博`,
         input_message_content: {
-            message_text: `${process.env.DOMAIN}/p/${locals.id}`
+            message_text: url,
         },
         url: locals.url,
-        description: locals.content
+        description: locals.content.text
     }];
 }
 
