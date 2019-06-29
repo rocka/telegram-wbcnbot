@@ -1,0 +1,37 @@
+~version: "2.0"
+
+?exists: //div[@class='tweet']
+
+# basic meta
+site_name: "新浪微博"
+
+# instant view body
+body: /html/body
+
+$user: //body/div[@class="tweet"]/div[@class="tweet_user"]
+$avatar: $user/img
+$username: $user/span
+
+@wrap(<p>): $user
+@set_attr(width, 40): $avatar
+@set_attr(height, 40): $avatar
+@replace_tag(<pic>): $avatar
+@prepend("　"): $username
+
+$tweet: //div[@class="tweet"]
+$content: $tweet/div[@class="tweet_content"]
+
+@replace_tag(<slideshow>): $content/div[@class="picture"]
+
+$retweet: //blockquote[@class="retweet"]
+
+@if ($retweet) {
+  # prepend <hr> before retweet content
+  @before(<hr>): $retweet
+  $orig_author: $retweet/span[@class="user_name"]
+  @replace_tag(<b>): $orig_author
+  @wrap(<p>): $@
+  @after(<br>): $retweet/span[@class="user_name"]
+  @replace_tag(<slideshow>): $retweet/div[@class="picture"]
+  @replace_tag(<article>): $retweet
+}
