@@ -16,8 +16,8 @@
     "cheerio": "^1.0.0-rc.2",
     "koa": "^2.7.0",
     "koa-router": "^7.4.0",
-    "node-fetch": "^2.3.0",
-    "pug": "^2.0.3",
-    "telegraf": "^3.27.1"
+    "node-fetch": "^2.6.0",
+    "pug": "^2.0.4",
+    "telegraf": "^3.30.1"
   }
 }
