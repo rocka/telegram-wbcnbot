@@ -37,7 +37,8 @@ function getWeiboHTML(url) {
 }
 
 /**
- * @param {string[]} scripts 
+ * @param {string[]} scripts
+ * @returns {WBCNBot.PageGlobals}
  */
 function runScripts(scripts) {
     const sandbox = VM.createContext({
@@ -64,6 +65,10 @@ function runScripts(scripts) {
     };
 }
 
+/**
+ * @param {WBCNBot.WeiboStatus} status
+ * @returns {WBCNBot.WeiboLocals}
+ */
 function getTweetStatus(status) {
     let text, html;
     if (status.isLongText && status.longText) {
@@ -125,7 +130,13 @@ function getTweetStatus(status) {
     return result;
 }
 
-function makeLocals(url, { data, config, performance }) {
+/**
+ * 
+ * @param {string} url
+ * @param {WBCNBot.PageGlobals} globals
+ * @returns {WBCNBot.WeiboLocals}
+ */
+function makeLocals(url, { data }) {
     let locals = getTweetStatus(data.status);
     locals.url = url;
     if (data.status.retweeted_status) {
