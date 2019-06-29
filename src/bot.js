@@ -2,6 +2,7 @@
 
 const qs = require('querystring');
 
+const Pug = require('pug');
 const Telegraf = require('telegraf');
 
 const Common = require('./common');
@@ -9,20 +10,25 @@ const Common = require('./common');
 const bot = new Telegraf(process.env.BOT_TOKEN);
 const rhash = process.env.IV_RHASH;
 
+/**
+ * @param {WBCNBot.WeiboLocals} locals
+ */
 function makeTextMsg(locals) {
     if (!locals.id) {
         return [];
     }
-    let url = `${process.env.DOMAIN}/p/${locals.id}`;
+    let iv = `${process.env.DOMAIN}/p/${locals.id}`;
     if (rhash) {
-        url = `https://t.me/iv?${qs.stringify({ rhash, url })}`
+        iv = `https://t.me/iv?${qs.stringify({ rhash, url: iv })}`
     }
+    const orig = `https://m.weibo.cn/detail/${locals.mid}`;
     return [{
         type: 'article',
         id: `${locals.id}_a`,
         title: `${locals.user.name} 的微博`,
         input_message_content: {
-            message_text: url,
+            message_text: Pug.renderFile('./templates/message_text.pug', { iv, orig }),
+            parse_mode: 'html'
         },
         url: locals.url,
         description: locals.content.text
