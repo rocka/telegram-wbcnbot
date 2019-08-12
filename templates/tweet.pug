@@ -9,8 +9,9 @@ mixin videoContent
             video(src=url controls)
 
 .tweet
-    .tweet_user
-        img(src=user.avatar)
+    p.tweet_user
+        img.user_avatar(src=user.avatar)
+        span &nbsp;
         span.user_name !{user.name}
     .tweet_content
         div

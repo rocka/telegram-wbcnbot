@@ -8,8 +8,9 @@ mixin videoContent
         each url in retweet.video
             video(src=url controls)
 
-blockquote.retweet
-    span.user_name !{retweet.user.name}
+article.retweet
+    p.retweet_user
+        b.user_name !{retweet.user.name}
     div
         != retweet.content.html
     case retweet.type
