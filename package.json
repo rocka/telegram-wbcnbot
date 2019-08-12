@@ -13,11 +13,11 @@
   "author": "rocka <i@rocka.me>",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
+    "cheerio": "^1.0.0-rc.3",
     "koa": "^2.7.0",
     "koa-router": "^7.4.0",
     "node-fetch": "^2.6.0",
     "pug": "^2.0.4",
-    "telegraf": "^3.30.1"
+    "telegraf": "^3.32.0"
   }
 }
