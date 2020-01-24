@@ -62,7 +62,7 @@ bot.on('inline_query', async ({ inlineQuery, answerInlineQuery }) => {
         return answerInlineQuery([]);
     }
     console.log('[Bot Query]', inlineQuery.query);
-    const url = Common.getWeiboURL(inlineQuery.query);
+    const url = await Common.getWeiboURL(inlineQuery.query);
     console.log('url:', url);
     const locals = await Common.getLocals(url);
     console.log('locals: ', locals);

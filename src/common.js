@@ -1,6 +1,8 @@
 'use strict';
 
 const VM = require('vm');
+const { URL } = require('url');
+
 const fetch = require('node-fetch');
 const Cheerio = require('cheerio');
 
@@ -13,12 +15,37 @@ const WeiboURL = [
     'http://weibo.com/'
 ];
 
+const WeiboIntlShareUrl = [
+    'https://weibointl.api.weibo.cn/share/',
+    'weibointl.api.weibo.cn/share/',
+    'http://weibointl.api.weibo.cn/share/'
+];
+
+async function getWeiboIdFromIntlShare(url) {
+    const html = await getWeiboHTML(url);
+    const $ = Cheerio.load(html);
+    const onclick = $('.footer_suspension .m-btn-orange')
+        .first()
+        .attr('onclick');
+    const id = onclick.match(/forward\(\d+,(?<id>\d+)\)/).groups['id'];
+    return id;
+}
+
 /**
- * @param {string} id
+ * @param {string} str
  */
-function getWeiboURL(id) {
-    if (WeiboURL.some(u => id.startsWith(u))) {
-        return id;
+async function getWeiboURL(str) {
+    if (WeiboURL.some(u => str.startsWith(u))) {
+        return str;
+    }
+    let id = str;
+    if (WeiboIntlShareUrl.some(u => str.startsWith(u))) {
+        const u = new URL(str);
+        if (u.searchParams.has('weibo_id')) {
+            id = u.searchParams.get('weibo_id');
+        } else {
+            id = await getWeiboIdFromIntlShare(str);
+        }
     }
     return `https://m.weibo.cn/detail/${id}`;
 }
