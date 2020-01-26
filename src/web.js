@@ -13,7 +13,7 @@ router.get('/p/:id', async (ctx) => {
     const { id } = ctx.params;
     // use query param '?k' to prevent redirection
     const keep = Reflect.has(ctx.query, 'k');
-    const url = Common.getWeiboURL(id);
+    const url = await Common.getWeiboURL(id);
     const locals = await Common.getLocals(url);
     if (keep) {
         locals.keep = keep;
@@ -25,7 +25,7 @@ router.get('/json/:id', async (ctx) => {
     const { id } = ctx.params;
     // use query param '?raw' to prevent redirection
     const raw = Reflect.has(ctx.query, 'raw');
-    const url = Common.getWeiboURL(id);
+    const url = await Common.getWeiboURL(id);
     if (raw) {
         ctx.body = await Common.getRawConfig(url);
         return;
