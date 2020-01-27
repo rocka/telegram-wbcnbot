@@ -147,7 +147,14 @@ function getTweetStatus(status) {
             result.picture = (status.pics || []).map(p => p.large.url);
             break;
         case 'video':
-            result.video = [status.page_info.media_info.stream_url];
+            const mi = status.page_info.media_info;
+            /** @type {string[]} */
+            const urls = [
+                mi.stream_url,
+                mi.stream_url_hd,
+                Object.values(status.page_info.urls)
+            ];
+            result.video = [urls.find(i => i.includes('.weibocdn.com') && i.includes('.mp4'))];
             result.thumbnail = [status.page_info.page_pic.url];
             break;
         case 'article':
