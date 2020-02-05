@@ -1,9 +1,15 @@
 ~version: "2.1"
 
-?exists: //div[@class="tweet"]
+$tweet: //div[@class="tweet"]
+?exists: $tweet
 
 # instant view body
 body: //body
+
+# publish time
+$tweet_time: $tweet//p[@class="tweet_time"]
+published_date: $tweet_time
+@remove: $tweet_time
 
 # <avatar> seems not supported by Telegram X Android now, which causes instant
 # view unavailable. disable it for now
@@ -14,3 +20,8 @@ body: //body
 # @replace_tag(<pic>): $avatar
 
 @replace_tag(<slideshow>): //div[@class="picture"]
+
+# retweet time in small font
+$retweet: //article[@class="retweet"]
+$retweet_time: $retweet//p[@class="retweet_time"]
+@replace_tag(<sup>): $retweet_time
