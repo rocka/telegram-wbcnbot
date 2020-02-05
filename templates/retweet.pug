@@ -11,6 +11,7 @@ mixin videoContent
 article.retweet
     p.retweet_user
         b.user_name !{retweet.user.name}
+    p.retweet_time !{retweet.time}
     div
         != retweet.content.html
     case retweet.type

@@ -13,6 +13,7 @@ mixin videoContent
         img.user_avatar(src=user.avatar)
         span &nbsp;
         span.user_name !{user.name}
+    p.tweet_time !{time}
     .tweet_content
         div
             != content.html
