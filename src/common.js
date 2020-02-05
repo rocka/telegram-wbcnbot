@@ -3,8 +3,11 @@
 const VM = require('vm');
 const { URL } = require('url');
 
+/** @type {(url: RequestInfo, init: RequestInit?) => Promise<Response>} */
 const fetch = require('node-fetch');
 const Cheerio = require('cheerio');
+
+const Archive = require('./archive');
 
 const WeiboURL = [
     'https://m.weibo.cn/',
@@ -57,10 +60,20 @@ async function getWeiboURL(str) {
 function getWeiboHTML(url) {
     return fetch(url, {
         headers: {
-            'User-Agent': 'Mozilla/5.0 (Android 6.0) Chrome/7.0'
+            'User-Agent': 'Mozilla/5.0 (Android 6.0) Chrome/7.0 Safari/8.0'
         },
         compress: true
-    }).then(r => r.text());
+    }).then(r => {
+        if (r.status === 200) {
+            Archive.queryArchive(url).then(archives => {
+                if (archives.length === 0) {
+                    Archive.createArchive(url);
+                }
+            })
+            return r.text();
+        }
+        return Archive.fetchArchive(url);
+    })
 }
 
 /**
