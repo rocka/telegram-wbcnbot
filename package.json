@@ -15,9 +15,9 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "koa": "^2.11.0",
-    "koa-router": "^8.0.6",
+    "koa-router": "^8.0.8",
     "node-fetch": "^2.6.0",
     "pug": "^2.0.4",
-    "telegraf": "^3.36.0"
+    "telegraf": "^3.37.0"
   }
 }
