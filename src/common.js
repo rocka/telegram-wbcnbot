@@ -1,6 +1,6 @@
 'use strict';
 
-const VM = require('vm');
+const vm = require('vm');
 const { URL } = require('url');
 
 /** @type {(url: RequestInfo, init: RequestInit?) => Promise<Response>} */
@@ -18,7 +18,7 @@ const WeiboURL = [
     'http://weibo.com/'
 ];
 
-const WeiboIntlShareUrl = [
+const WeiboIntlShareURL = [
     'https://weibointl.api.weibo.cn/share/',
     'weibointl.api.weibo.cn/share/',
     'http://weibointl.api.weibo.cn/share/'
@@ -42,7 +42,7 @@ async function getWeiboURL(str) {
         return str;
     }
     let id = str;
-    if (WeiboIntlShareUrl.some(u => str.startsWith(u))) {
+    if (WeiboIntlShareURL.some(u => str.startsWith(u))) {
         const u = new URL(str);
         if (u.searchParams.has('weibo_id')) {
             id = u.searchParams.get('weibo_id');
@@ -81,7 +81,7 @@ function getWeiboHTML(url) {
  * @returns {WBCNBot.PageGlobals}
  */
 function runScripts(scripts) {
-    const sandbox = VM.createContext({
+    const sandbox = vm.createContext({
         navigator: {
             userAgent: 'Mozilla/5.0 (Android 6.0) Chrome/7.0'
         },
@@ -95,9 +95,9 @@ function runScripts(scripts) {
         $render_data: null,
         __wb_performance_data: null
     });
-    scripts.forEach(s => {
-        VM.runInContext(s, sandbox);
-    });
+    for (const s of scripts) {
+        vm.runInContext(s, sandbox);
+    }
     return {
         data: sandbox.$render_data,
         config: sandbox.config,
@@ -114,10 +114,11 @@ function getTweetStatus(status) {
     if (status.isLongText && status.longText) {
         text = status.longText.longTextContent;
         html = text;
-        status.longText.url_objects.forEach(o => {
+        for (const o of status.longText.url_objects) {
+            if (!o.info) continue;
             text = text.replace(o.url_ori, o.info.url_long);
             html = html.replace(o.url_ori, `<a href="${o.info.url_long}">${o.info.url_long}</a>`);
-        });
+        }
         html = html.replace(/\n/g, '<br>');
     } else {
         const $ = Cheerio.load(status.text);
