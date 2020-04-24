@@ -179,7 +179,6 @@ function getTweetStatus(status) {
 }
 
 /**
- * 
  * @param {string} url
  * @param {WBCNBot.PageGlobals} globals
  * @returns {WBCNBot.WeiboLocals}
@@ -193,6 +192,10 @@ function makeLocals(url, { data }) {
     return locals;
 }
 
+/**
+ * @param {string} url
+ * @returns {WBCNBot.PageGlobals}
+ */
 async function getRawConfig(url) {
     const html = await getWeiboHTML(url);
     const $ = Cheerio.load(html);
@@ -200,6 +203,10 @@ async function getRawConfig(url) {
     return runScripts(Array.from(scripts));
 }
 
+/**
+ * @param {string} url
+ * @returns {WBCNBot.WeiboLocals}
+ */
 async function getLocals(url) {
     const config = await getRawConfig(url);
     if (config.data) {
