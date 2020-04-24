@@ -6,7 +6,7 @@ const Router = require('koa-router');
 
 const Common = require('./common');
 
-const server = new Koa();
+const app = new Koa();
 const router = new Router();
 
 router.get('/p/:id', async (ctx) => {
@@ -33,8 +33,4 @@ router.get('/json/:id', async (ctx) => {
     ctx.body = await Common.getLocals(url);
 });
 
-server.use(router.routes());
-const port = process.env.PORT || 2233;
-server.listen(port, '127.0.0.1', () => {
-    console.log(`Web server running on 127.0.0.1:${port} ...`);
-});
+module.exports = { app, router };

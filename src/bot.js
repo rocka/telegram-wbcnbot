@@ -3,7 +3,7 @@
 const qs = require('querystring');
 
 const Pug = require('pug');
-const Telegraf = require('telegraf');
+const { default: Telegraf } = require('telegraf');
 
 const Common = require('./common');
 
@@ -74,5 +74,4 @@ bot.catch((err) => {
     console.log('[ERROR]', err);
 });
 
-bot.startPolling();
-console.log(`Telegram bot server running ...`);
+module.exports = bot;
