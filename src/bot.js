@@ -44,26 +44,20 @@ function makeInlineQueryResult(locals) {
     }];
 }
 
-// TODO: support more types
-function makeResults(locals) {
-    switch (locals.type) {
-        case 'picture':
-            return locals.picture.map((p, i) => {
-                let r = {
-                    type: 'photo',
-                    id: `${locals.id}_${i}`
-                };
-                if (p.endsWith('.gif')) {
-                    r.gif_url = p;
-                    r.thumb_url = locals.picture_thumb[i];
-                } else {
-                    r.photo_url = p;
-                    r.thumb_url = locals.picture_thumb[i];
-                }
-                return r;
-            });
+bot.on('message', async ctx => {
+    if (ctx.chat.type === 'private') {
+        const { text } = ctx.message;
+        console.log('[Private Message]', text);
+        const url = await Common.getWeiboURL(text);
+        console.log('[Private Message] Weibo URL:', url);
+        const locals = await Common.getLocals(url);
+        console.log('[Private Message] Locals:', locals);
+        if (!Object.prototype.hasOwnProperty.call(locals, 'id')) { 
+            return;
+        }
+        return ctx.reply(makeTextMessageContent(locals), { parse_mode: 'HTML' });
     }
-}
+});
 
 bot.on('inline_query', async ctx => {
     const { id, query } = ctx.inlineQuery;
