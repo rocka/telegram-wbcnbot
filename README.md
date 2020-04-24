@@ -22,18 +22,20 @@ Inline bot [@wbcnbot](https://t.me/wbcnbot) on Telegram.
 
 ### Requirements
 
-- A public web server
-- A domain points at the server above
+- A public server
+- A domain points to the server
 
 ### Steps
 
 1. Clone the repo, and install dependencies by `npm ci`.
 1. Setup necessary [environment variables](#environment-variables), then run this bot by `node idnex.js`.
-1. Create a bot following instructions given by [@BotFather](https://t.me/botfather).
+1. Create a bot following instructions given by [@BotFather](https://t.me/botfather), and enable [Inline Mode](https://core.telegram.org/bots/inline) for this bot.
 1. Submit [this](./rules.instantview) as Instant View template of your domain [here](https://instantview.telegram.org/my/), to get your `iv_hash`
 
 ### Environment variables
 
-- `BOT_TOKEN` Telegram bot token from [@BotFather](https://t.me/botfather)
-- `IV_RHASH` Instant view template hash
-- `DOMAIN` Domain for webpage serving
+- `WEBHOOK_PATH` Optional. Use [Webhook](https://core.telegram.org/bots/webhooks) instead of long polling for receiving updates. See [here](https://core.telegram.org/bots/api#getting-updates) for more info.
+- `BOT_TOKEN` Telegram bot token from [@BotFather](https://t.me/botfather).
+- `IV_RHASH` Instant view template hash.
+- `DOMAIN` Domain for webpage serving.
+- `HOST` and `PORT` Host and port to listen. Default to `127.0.0.1:2233`.
