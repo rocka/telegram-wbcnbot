@@ -11,22 +11,20 @@ const router = new Router();
 
 router.get('/p/:id', async (ctx) => {
     const { id } = ctx.params;
-    // use query param '?k' to prevent redirection
-    const keep = Reflect.has(ctx.query, 'k');
     const url = await Common.getWeiboURL(id);
     const locals = await Common.getLocals(url);
-    if (keep) {
-        locals.keep = keep;
+    if (Object.prototype.hasOwnProperty.call(ctx.query, 'k')) {
+        // use query param '?k' to prevent redirection
+        locals.keep = true;
     }
     ctx.body = Pug.renderFile('./templates/detail_page.pug', locals);
 });
 
 router.get('/json/:id', async (ctx) => {
     const { id } = ctx.params;
-    // use query param '?raw' to prevent redirection
-    const raw = Reflect.has(ctx.query, 'raw');
     const url = await Common.getWeiboURL(id);
-    if (raw) {
+    if (Object.prototype.hasOwnProperty.call(ctx.query, 'raw')) {
+        // use query param '?raw' to prevent redirection
         ctx.body = await Common.getRawConfig(url);
         return;
     }
