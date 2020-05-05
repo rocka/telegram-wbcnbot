@@ -19,6 +19,6 @@
     "koa-router": "^8.0.8",
     "node-fetch": "^2.6.0",
     "pug": "^2.0.4",
-    "telegraf": "^3.37.0"
+    "telegraf": "^3.38.0"
   }
 }
