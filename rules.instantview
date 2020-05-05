@@ -24,4 +24,4 @@ published_date: $tweet_time
 # retweet time in small font
 $retweet: //article[@class="retweet"]
 $retweet_time: $retweet//p[@class="retweet_time"]
-@replace_tag(<sup>): $retweet_time
+@replace_tag(<blockquote>): $retweet_time
