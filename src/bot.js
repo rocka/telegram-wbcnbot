@@ -53,7 +53,7 @@ bot.on('message', async ctx => {
         const locals = await Common.getLocals(url);
         console.log('[Private Message] Locals:', locals);
         if (!Object.prototype.hasOwnProperty.call(locals, 'id')) { 
-            return;
+            return ctx.reply('Weibo not available :(');
         }
         return ctx.reply(makeTextMessageContent(locals), { parse_mode: 'HTML' });
     }

@@ -17,6 +17,10 @@ router.get('/p/:id', async (ctx) => {
         // use query param '?k' to prevent redirection
         locals.keep = true;
     }
+    if (!Object.prototype.hasOwnProperty.call(locals, 'id')) {
+        ctx.status = 404;
+        return ctx.body = 'Weibo not available :(';
+    }
     ctx.body = Pug.renderFile('./templates/detail_page.pug', locals);
 });
 
