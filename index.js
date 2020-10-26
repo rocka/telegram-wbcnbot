@@ -6,6 +6,10 @@ const Domain = process.env.DOMAIN;
 const Host = process.env.HOST || '127.0.0.1';
 const Port = process.env.PORT || 2233;
 
+process.on('unhandledRejection', (reason, promise) => {
+    console.log('Unhandled Rejection at:', promise, 'reason:', reason);
+});
+
 const web = require('./src/web');
 
 (async () => {

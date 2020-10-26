@@ -61,19 +61,22 @@ function getWeiboHTML(url) {
     return fetch(url, {
         headers: {
             'User-Agent': 'Mozilla/5.0 (Android 6.0) Chrome/7.0 Safari/8.0'
-        },
-        compress: true
+        }
     }).then(r => {
         if (r.status === 200) {
             Archive.queryArchive(url).then(archives => {
                 if (archives.length === 0) {
-                    Archive.createArchive(url);
+                    Archive.createArchive(url).catch(e => {
+                        console.log(`[Archive] Failed to save "${url}", ${e}`);
+                    })
                 }
+            }).catch(e => {
+                console.log(`[Archive] Failed to query "${url}", ${e}`);
             })
             return r.text();
         }
-        return Archive.fetchArchive(url);
-    })
+        return Archive.fetchArchive(url).catch(() => '');
+    });
 }
 
 /**
