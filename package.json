@@ -16,7 +16,7 @@
     "cheerio": "^1.0.0-rc.3",
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
-    "koa-router": "^9.4.0",
+    "koa-router": "^10.0.0",
     "node-fetch": "^2.6.1",
     "pug": "^3.0.0",
     "telegraf": "^3.38.0"
