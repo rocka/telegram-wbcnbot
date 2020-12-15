@@ -21,7 +21,10 @@ const WeiboURL = [
 const WeiboIntlShareURL = [
     'https://weibointl.api.weibo.cn/share/',
     'weibointl.api.weibo.cn/share/',
-    'http://weibointl.api.weibo.cn/share/'
+    'http://weibointl.api.weibo.cn/share/',
+    'https://weibointl.api.weibo.com/share/',
+    'weibointl.api.weibo.com/share/',
+    'http://weibointl.api.weibo.com/share/'
 ];
 
 async function getWeiboIdFromIntlShare(url) {
