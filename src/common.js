@@ -149,14 +149,15 @@ function getTweetStatus(status) {
     }
     let type = status.page_info ? status.page_info.type : 'text';
     if (status.pic_ids && status.pic_ids.length > 0) type = 'picture';
+    const user = status.user || {}; // user may be null if it's deleted
     const result = {
         id: status.id,
         mid: status.mid,
         type,
         user: {
-            id: status.user.id,
-            name: status.user.screen_name,
-            avatar: status.user.profile_image_url
+            id: user.id,
+            name: user.screen_name,
+            avatar: user.profile_image_url
         },
         time: status.created_at,
         content: { html, text }
