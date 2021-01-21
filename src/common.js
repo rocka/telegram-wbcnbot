@@ -167,7 +167,8 @@ function getTweetStatus(status) {
             result.picture = (status.pics || []).map(p => p.large.url);
             break;
         case 'video':
-            result.video = [Object.values(status.page_info.urls)[0]];
+            const { media_info, urls = {} } = status.page_info;
+            result.video = [media_info.stream_url_hd || media_info.stream_url || Object.values(urls)[0]];
             result.thumbnail = [status.page_info.page_pic.url];
             break;
         case 'article':
