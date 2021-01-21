@@ -3,7 +3,7 @@
 const qs = require('querystring');
 
 const Pug = require('pug');
-const { default: Telegraf } = require('telegraf');
+const { Telegraf } = require('telegraf');
 
 const Common = require('./common');
 

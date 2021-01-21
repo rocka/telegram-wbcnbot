@@ -28,7 +28,7 @@ if (BotToken && Domain) {
         bot.telegram.getWebhookInfo().then(info => console.log('[WebhookInfo]', info));
     } else {
         await bot.telegram.deleteWebhook();
-        bot.startPolling();
+        bot.launch();
         console.log('Telegram bot running on polling mode ...');
     }
 }
