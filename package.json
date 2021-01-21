@@ -12,6 +12,7 @@
   ],
   "author": "rocka <i@rocka.me>",
   "license": "GPL-3.0-or-later",
+  "repository": "github:rocka/telegram-wbcnbot",
   "dependencies": {
     "cheerio": "^1.0.0-rc.5",
     "koa": "^2.13.1",
