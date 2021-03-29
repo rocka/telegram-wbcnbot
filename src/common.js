@@ -18,22 +18,25 @@ const WeiboURL = [
     'http://weibo.com/'
 ];
 
-const WeiboIntlShareURL = [
+const WeiboShareURL = [
     'https://weibointl.api.weibo.cn/share/',
-    'weibointl.api.weibo.cn/share/',
     'http://weibointl.api.weibo.cn/share/',
+    'weibointl.api.weibo.cn/share/',
     'https://weibointl.api.weibo.com/share/',
+    'http://weibointl.api.weibo.com/share/',
     'weibointl.api.weibo.com/share/',
-    'http://weibointl.api.weibo.com/share/'
+    'https://share.api.weibo.cn/share/',
+    'http://share.api.weibo.cn/share/',
+    'share.api.weibo.cn/share/'
 ];
 
-async function getWeiboIdFromIntlShare(url) {
+async function getWeiboIdFromShare(url) {
     const html = await getWeiboHTML(url);
     const $ = Cheerio.load(html);
     const onclick = $('.footer_suspension .m-btn-orange')
         .first()
         .attr('onclick');
-    const id = onclick.match(/forward\(\d+,(?<id>\d+)\)/).groups['id'];
+    const id = onclick.match(/forward\(\d+,(?<id>\d+),?/).groups['id'];
     return id;
 }
 
@@ -45,12 +48,12 @@ async function getWeiboURL(str) {
         return str;
     }
     let id = str;
-    if (WeiboIntlShareURL.some(u => str.startsWith(u))) {
+    if (WeiboShareURL.some(u => str.startsWith(u))) {
         const u = new URL(str);
         if (u.searchParams.has('weibo_id')) {
             id = u.searchParams.get('weibo_id');
         } else {
-            id = await getWeiboIdFromIntlShare(str);
+            id = await getWeiboIdFromShare(str);
         }
     }
     return `https://m.weibo.cn/detail/${id}`;
